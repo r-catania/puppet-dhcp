@@ -10,6 +10,7 @@ define dhcp::pool (
   Variant[Array[String], Optional[String]] $parameters = undef,
   Optional[Integer[0]] $mtu = undef,
   Variant[Array[String], Optional[String]] $nameservers = undef,
+  Variant[Array[String], Optional[String]] $ntpservers = undef,
   Optional[String] $pxeserver = undef,
   Optional[String] $pxefilename = undef,
   Optional[String] $domain_name = undef,

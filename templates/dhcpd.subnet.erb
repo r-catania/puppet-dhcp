@@ -69,6 +69,11 @@ subnet <%= @network %> netmask <%= @mask %> {
 <% elsif @nameservers -%>
   option domain-name-servers <%= @nameservers %>;
 <% end -%>
+<% if @ntpservers and @ntpservers.is_a? Array -%>
+  option ntp-servers <%= @ntpservers.join(', ') %>;
+<% elsif @ntpservers -%>
+  option ntp-servers <%= @ntpservers %>;
+<% end -%>
 <% if @search_domains and @search_domains.is_a? Array -%>
   option domain-search "<%= @search_domains.sort.join('", "') %>";
 <% elsif @search_domains -%>
